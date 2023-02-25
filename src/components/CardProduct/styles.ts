@@ -50,6 +50,7 @@ export const Container = styled.div`
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 18px 1rem 0;
+    margin-top: 1rem;
     color: var(--bold-green);
     cursor: pointer;
     transition: all .4s ease;

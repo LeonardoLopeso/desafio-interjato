@@ -2,11 +2,14 @@ import { FiImage, FiShoppingCart } from 'react-icons/fi';
 import { IProduct } from '../../types';
 import * as C from './styles';
 
-export const CardProduct = ({ img, name, description, price }: IProduct) => {
+export const CardProduct = ({ img, name, description, price, onClick }: IProduct) => {
   return(
     <C.Container>
 
-      <div className="image">
+      <div 
+        className="image"
+        onClick={onClick}
+      >
         {img 
           ? <img src={img} alt={name} />
           : <FiImage size={45} color={'#777'} opacity={.6} />

@@ -30,7 +30,7 @@ export const Container = styled.div`
     align-items: center;
     max-width: var(--width-wrapper);
     padding: 0 57px;
-    margin: 43px auto 43px auto;
+    margin: 43px auto 1rem auto;
 
     .cart div {
       display: flex;
@@ -45,6 +45,14 @@ export const Container = styled.div`
       display: none;
       cursor: pointer;
     }
+  }
+
+  .breadcrumb {
+    max-width: var(--width-wrapper);
+    width: 100%;
+    padding: 0 57px;
+    margin: 0 auto 43px 0;
+    color: #777;
   }
 
   @media screen and (max-width: 760px) {

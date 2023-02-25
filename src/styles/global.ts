@@ -27,6 +27,7 @@ export default createGlobalStyle`
     --text-section: #102A43;
 
     --bold-green: #014D40;
+    --btn-green: #199473;
 
     --width-wrapper: 1440px;
 

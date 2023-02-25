@@ -11,7 +11,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/produto' element={<ProductDetail />} />
+        <Route path='/produto/:id' element={<ProductDetail />} />
         <Route path='/carrinho' element={<Cart />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
