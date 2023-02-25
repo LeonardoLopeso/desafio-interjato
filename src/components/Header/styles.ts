@@ -51,7 +51,7 @@ export const Container = styled.div`
     max-width: var(--width-wrapper);
     width: 100%;
     padding: 0 57px;
-    margin: 0 auto 43px 0;
+    margin: 0 auto 43px auto;
     color: #777;
   }
 
