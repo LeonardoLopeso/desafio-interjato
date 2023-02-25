@@ -20,12 +20,15 @@ export default createGlobalStyle`
     --bg-header-top: #27AB83;
     
     --placeholder-color: #C6F7E2;
+    --banner-color: #8EEDC7;
     --btn-primary: #4D3DF7;
     --trash-color: #8E2C2C;
 
     --text-section: #102A43;
 
     --bold-green: #014D40;
+
+    --width-wrapper: 1440px;
 
   }
   body {

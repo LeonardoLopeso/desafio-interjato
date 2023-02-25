@@ -4,23 +4,33 @@ export const Container = styled.div`
   width: 100%;
 
   .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 29px;
-    color: #fff;
-    padding: 0 57px;
-    font-size: 12px;
-
     background-color: var(--bg-header-top);
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--width-wrapper);
+      height: 29px;
+      margin: 0 auto;
+      color: #fff;
+      padding: 0 57px;
+      font-size: 12px;
+
+      @media screen and (max-width: 560px) {
+        .phone { display: none; }
+      }
+    }
+
   }
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: var(--width-wrapper);
     padding: 0 57px;
-    margin-top: 43px;
+    margin: 43px auto 43px auto;
 
     .cart div {
       display: flex;
