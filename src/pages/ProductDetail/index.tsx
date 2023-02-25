@@ -15,7 +15,7 @@ export const ProductDetail = () => {
   useEffect(() => {
     const product = Products.filter(prod => prod.id === Number(params.id));
     setData(product);
-  }, [])
+  }, [params.id])
   
 
   return(
