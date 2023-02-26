@@ -9,16 +9,7 @@ export const ContentWrapper = styled.div`
   width: 100%;
   padding: 0 57px 5rem 57px;
   margin: 0 auto;
-
-  .arrow-back {
-    display: flex;
-    align-items: center;
-    max-width: 80px;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    color: var(--text-section);
-  }
-
+  
   .details__img-desc {
     display: flex;
     gap: 2rem;
@@ -105,7 +96,7 @@ export const ContentWrapper = styled.div`
 
       .img {
         width: 100%;
-        height: 450px;
+        height: 350px;
       }
       .description {
         width: 100%;

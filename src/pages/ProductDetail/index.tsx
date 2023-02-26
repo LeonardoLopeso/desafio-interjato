@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FiChevronLeft, FiImage, FiMinus, FiPlus } from 'react-icons/fi';
-import { useNavigate, useParams } from 'react-router-dom';
+import { FiImage, FiMinus, FiPlus } from 'react-icons/fi';
+import { useParams } from 'react-router-dom';
+import { ArrowBack } from '../../components/ArrowBack';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Products } from '../../dataMock';
@@ -9,7 +10,6 @@ import * as C from './styles';
 
 export const ProductDetail = () => {
   const params = useParams();
-  const navigate = useNavigate();
   const [data, setData] = useState<IProduct[]>([]);
   
   useEffect(() => {
@@ -23,9 +23,7 @@ export const ProductDetail = () => {
       <Header numpage={2} />
 
       <C.ContentWrapper>
-        <div className='arrow-back' onClick={() => navigate(-1)}>
-          <FiChevronLeft size={18} /> Voltar
-        </div>
+        <ArrowBack />
 
         <div className="details__img-desc">
 

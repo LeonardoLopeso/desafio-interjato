@@ -19,6 +19,8 @@ export const Container = styled.div`
 
       @media screen and (max-width: 560px) {
         .phone { display: none; }
+
+        padding: 0 2rem;
       }
     }
 
@@ -31,6 +33,10 @@ export const Container = styled.div`
     max-width: var(--width-wrapper);
     padding: 0 57px;
     margin: 43px auto 1rem auto;
+
+    .logo h1 {
+      cursor: pointer;
+    }
 
     .cart div {
       display: flex;
@@ -56,8 +62,11 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 760px) {
+    .header, .breadcrumb {
+      padding: 0 2rem;
+    }
     .header .menu-mobile {
-      display: block;
+      /* display: block; */
     }
   }
 `;

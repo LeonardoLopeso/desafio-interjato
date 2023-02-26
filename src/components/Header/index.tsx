@@ -2,8 +2,11 @@ import * as C from './styles';
 import { FiMenu, FiShoppingCart } from 'react-icons/fi';
 import { BreadCrumbs } from '../BreadCrumbs';
 import { IPropHeader } from '../../types';
+import { useNavigate } from 'react-router-dom';
 
 export const Header = ({ numpage }: IPropHeader) => {
+  const navigate = useNavigate();
+
   return(
     <C.Container>
       <div className="header-top">
@@ -16,10 +19,10 @@ export const Header = ({ numpage }: IPropHeader) => {
 
       <div className="header">
         <div className="logo">
-          <h1>Logo</h1>
+          <h1 onClick={() => navigate('/')} >Logo</h1>
         </div>
         <div className="cart">
-          <div><FiShoppingCart size={20} /> Carrinho</div>
+          <div onClick={() => navigate('/carrinho')}><FiShoppingCart size={20} /> Carrinho</div>
         </div>
 
         <div className="menu-mobile"><FiMenu size={20} /></div>
