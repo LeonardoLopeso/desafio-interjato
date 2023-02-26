@@ -59,7 +59,7 @@ export const ContentWrapper = styled.div`
     padding: 0 2rem 5rem 2rem;
     
     .banner {
-      padding: 60px 3rem;
+      padding: 60px 1rem;
       text-align: center;
     }
 

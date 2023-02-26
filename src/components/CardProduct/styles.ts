@@ -22,6 +22,14 @@ export const Container = styled.div`
     border-top-right-radius: 16px;
     background-color: var(--placeholder-color);
     cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      object-fit: cover;
+    }
   }
 
   .description-product {

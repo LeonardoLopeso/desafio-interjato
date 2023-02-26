@@ -28,7 +28,10 @@ export const ProductDetail = () => {
         <div className="details__img-desc">
 
           <div className="img">
-            <FiImage size={80} color={'#777'} opacity={.6} />
+            {data[0]?.img
+              ?  <img src={data[0]?.img} alt={data[0]?.name} />
+              :  <FiImage size={80} color={'#777'} opacity={.6} />
+            }
           </div>
 
           <div className="description">
