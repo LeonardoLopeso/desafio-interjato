@@ -1,47 +1,52 @@
-# Getting Started with Create React App
+# Desafio-Interjato
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto desenvolvido como solicitação para recrutamento Interjato, consistindo em uma página para o mercado agrícola.
 
-## Available Scripts
+### 🚀 Começando
 
-In the project directory, you can run:
+Para executar o projeto existem duas maneiras, para a primeira ele poderá ser executado via docker. Na pasta raiz do projeto, há o arquivo [docker-compose.yml](https://github.com/LeonardoLopeso/desafio-interjato/blob/main/docker-compose.yml)
 
-### `npm start`
+Utilizando o comando: 
+```
+$ docker compose up
+``` 
+Será iniciado um container com a imagem do node:14-alpine e as dependências necessárias para execução do projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Alternativamente, o projeto pode ser executado diretamente pelo npm, para isso será necessário ter o npm instalado e baixar as dependências listadas/contidas no arquivo [package.json](https://github.com/LeonardoLopeso/desafio-interjato/blob/main/package.json), utilizando o seguinte comando na raiz do projeto: 
+```
+$ npm install
+```
+Após ele, utilizar: 
+```
+$ npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Após a escolha e execução de uma das maneiras o projeto estará disponível no endereço http://localhost:3000.
 
-### `npm test`
+### 🛠️ Construído com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para a construção do projeto foi utilizado as seguintes tecnologias:
 
-### `npm run build`
+* [React.js](https://pt-br.reactjs.org/)
+* [Figma](https://www.figma.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✅ Items Concluídos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Tela inicial de apresentação geral e com listagem de produtos
+* Detalhes do produto
+* Responsividade
+* Organização de código
+* Video de demonstração da página criada
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Item desenvolvidos adicionais/opcionais:
 
-### `npm run eject`
+* Carrinho de compras listando produtos
+* [Docker](https://github.com/LeonardoLopeso/desafio-interjato/blob/main/docker-compose.yml) do ambiente
+* Deploy do projeto no Netlify: [desafio-intejato](https://desafio-interjato.netlify.app/)
+* [Figma](https://www.figma.com/file/sOGaYSGYeGYpMezNvEJuDL/Desafio?node-id=0%3A1) do projeto 
+* [Video](https://drive.google.com/file/d/1qhMs2QlETyQMuj9oCmq5s5vsMnpFTMmd/view?usp=share_link) demonstração da página criada
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📄 Licença
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# desafio-interjato
+Este projeto está sob a licença  MIT.
