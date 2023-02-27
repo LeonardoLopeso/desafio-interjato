@@ -1,23 +1,43 @@
 import { useEffect, useState } from 'react';
 import { FiImage, FiMinus, FiPlus } from 'react-icons/fi';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowBack } from '../../components/ArrowBack';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
+import { useCart } from '../../context/main';
 import { Products } from '../../dataMock';
-import { IProduct } from '../../types';
+import { IItem, IProduct } from '../../types';
 import * as C from './styles';
 
 export const ProductDetail = () => {
+  const { addProductToCart, removeProductCar, cart } = useCart();
+  
   const params = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState<IProduct[]>([]);
+  const [idQtdCart, setIdQtdCart] = useState<IItem[]>([]);
+
+  const idProd = Number(params.id);
   
   useEffect(() => {
-    const product = Products.filter(prod => prod.id === Number(params.id));
+    const product = Products.filter(prod => prod.id === idProd);
     setData(product);
-  }, [params.id])
-  
+  }, [idProd])
 
+  useEffect(() => {
+    const prodCart = cart.filter(prod => prod.id === idProd);
+    setIdQtdCart(prodCart);
+  }, [cart, idProd])
+
+  const handleCart = () => {
+    if(idQtdCart[0] !== undefined && idQtdCart[0].qtd > 0) {
+      return navigate('/carrinho');
+    }
+
+    addProductToCart(data[0]);
+    return navigate('/carrinho');
+  }
+  
   return(
     <C.Container>
       <Header numpage={2} />
@@ -44,16 +64,21 @@ export const ProductDetail = () => {
               <p>{Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
-                }).format(data[0]?.price)}</p>
+                }).format(
+                  idQtdCart[0]?.qtd ? data[0]?.price : data[0]?.price
+              )}</p>
+
               <span>Ou em 12x de {Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
-                }).format(data[0]?.price / 12)}</span>
+                }).format(
+                  idQtdCart[0]?.qtd ? (data[0]?.price) / 12 : data[0]?.price
+              )}</span>
 
               <div className='btn-qtd'>
-                <span><FiMinus size={22} /></span>
-                <p>1</p>
-                <span><FiPlus size={22} /></span>
+                <span onClick={() => removeProductCar(data[0]?.id)}><FiMinus size={22} /></span>
+                <p>{idQtdCart[0]?.qtd ? idQtdCart[0]?.qtd : 0}</p>
+                <span onClick={() => addProductToCart(data[0])}><FiPlus size={22} /></span>
               </div>
             </div>
 
@@ -61,10 +86,12 @@ export const ProductDetail = () => {
               <Button 
                 title='Comprar' 
                 bgColor='var(--btn-green)' 
+                onClick={handleCart}
               />
-              <Button 
+              {/* <Button 
                 title='Add carrinho'
-              />
+                onClick={() => addProductToCart(data[0])}
+              /> */}
             </div>
           </div>
         </div>

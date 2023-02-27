@@ -2,11 +2,15 @@ import { IPropButton } from '../../types';
 import * as C from './styles';
 
 
-export const Button = ({ title, wButton, bgColor }: IPropButton) => {
+export const Button = ({ title, wButton, bgColor, onClick, children }: IPropButton) => {
   return(
-    <C.Container w={wButton} bgcolor={bgColor}>
+    <C.Container 
+      w={wButton} 
+      bgcolor={bgColor} 
+      onClick={onClick}
+    >
       <button>
-        {title}
+        {children ? children : title}
       </button>
     </C.Container>
   );

@@ -35,16 +35,33 @@ export const Container = styled.div`
     margin: 43px auto 1rem auto;
 
     .logo h1 {
+      font-size: 2.2rem;
       cursor: pointer;
     }
 
     .cart div {
+      position: relative;
       display: flex;
       align-items: center;
       gap: .5rem;
       
       color: var(--bold-green);
       cursor: pointer;
+
+      .qtd-itens-cart {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 23px;
+        height: 18px;
+        color: #fff;
+        border-radius: 2px;
+        /* transform: rotate(-1deg); */
+        background-color: var(--bold-green);
+      }
     }
 
     .menu-mobile {

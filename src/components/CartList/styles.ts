@@ -44,6 +44,13 @@ export const Container = styled.div`
     margin-left: 0;
     border-radius: 1rem;
     background-color: var(--placeholder-color);
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      object-fit: cover;
+    }
   }
 
   @media screen and (max-width: 600px) {

@@ -1,8 +1,20 @@
 import { FiImage, FiShoppingCart } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/main';
 import { IProduct } from '../../types';
 import * as C from './styles';
 
-export const CardProduct = ({ img, name, description, price, onClick }: IProduct) => {
+export const CardProduct = ({ id, img, name, description, price, onClick, qtd }: IProduct) => {
+  const { addProductToCart, cart } = useCart();
+  const navigate = useNavigate()
+
+  const handleCart = (id: number) => {
+    addProductToCart({id, img, name, description, price});
+    navigate(`/produto/${id}`);
+  }
+
+  const verifiedQtd = cart.filter(prod => prod.id === id);
+
   return(
     <C.Container>
 
@@ -20,22 +32,26 @@ export const CardProduct = ({ img, name, description, price, onClick }: IProduct
         <div className="name-price">
           <p>{name}</p>
           <p>{Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-                }).format(price)}</p>
+              style: 'currency',
+              currency: 'BRL'
+              }).format(price)}</p>
         </div>
         <div className="description">
           {description}
         </div>
       </div>
-
-      <div className='icon-cart'>
+      
+      <div 
+        className={`${verifiedQtd[0]?.qtd > 0 ? 'item-add' : 'icon-cart'}`}
+        onClick={() => handleCart(id)}
+      >
         <p>
           <span></span>
-          Adicionar ao carrinho
+          {verifiedQtd[0]?.qtd > 0 ? 'Item no carrinho' : 'Adicionar ao carrinho'}
         </p>
         <FiShoppingCart size={20} />
       </div>
+
     </C.Container>
   );
 }

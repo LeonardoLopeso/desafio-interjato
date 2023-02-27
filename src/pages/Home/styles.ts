@@ -12,19 +12,55 @@ export const ContentWrapper = styled.div`
 
   .banner {
     width: 100%;
-    height: 328px;
-    padding: 60px;
+    min-height: 328px;
+    padding: 35px 60px 60px;
     margin-top: 27px;
 
     border-radius: 1rem;
     background-color: var(--banner-color);
 
+    .link {
+
+      width: 167px;
+      min-height: 46px;
+
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      background-color: var(--btn-primary);
+
+      transition: all .4s ease;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 167px;
+        height: 46px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
+    
+    }
+
     h2 {
-      max-width: 514px;
-      font-size: 2rem;
+      min-height: 150px;
+      font-size: 2.3rem;
       color: var(--text-section);
 
       margin-bottom: 61px;
+
+      h3 {
+        max-width: 500px;
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
     }
   }
 
@@ -61,6 +97,15 @@ export const ContentWrapper = styled.div`
     .banner {
       padding: 60px 1rem;
       text-align: center;
+
+      h2 h3 {
+        max-width: none;
+        text-align: center;
+      }
+
+      .link {
+        margin: 0 auto;
+      }
     }
 
     .section-products {

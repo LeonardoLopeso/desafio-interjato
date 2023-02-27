@@ -15,6 +15,17 @@ export const ContentWrapper = styled.div`
     margin: 40px 0 30px 0;
   }
 
+  .products-cart h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    font-size: 2.7rem;
+    padding: 64px 0px;
+    opacity: .6;
+  }
+
   .total {
     display: flex;
     flex-direction: column;
@@ -30,7 +41,15 @@ export const ContentWrapper = styled.div`
     }
 
     .btn {
+      display: flex;
+      gap: 1rem;
       margin-top: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .total .btn {
+      flex-direction: column;
     }
   }
   

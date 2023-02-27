@@ -8,7 +8,7 @@ export const BreadCrumbs = ({page}: IPropBreadCrumbs) => {
 
   return(
     <C.Container>
-      {page === 1 ? '' : <><FiHome />{'home'+crumbs.pathname}</>}
+      {page === 1 || page === 4 ? '' : <><FiHome />{'inicio'+crumbs.pathname}</>}
     </C.Container>
   );
 }

@@ -9,7 +9,7 @@ export const Container = styled.div`
   transition: all .4s ease;
 
   &:hover {
-    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.25));
   }
 
   .image {
@@ -53,7 +53,7 @@ export const Container = styled.div`
     }
   }
 
-  .icon-cart {
+  .icon-cart, .item-add {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -86,6 +86,27 @@ export const Container = styled.div`
         span {
           width: 0%;
         }
+      }
+    }
+  }
+
+  .item-add {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    color: #fff;
+
+    svg {
+      transform: rotate(-10deg);
+      color: var(--bold-green);
+    }
+
+    p {
+      border-radius: 8px;
+      padding: 2px 8px;
+      background-color: var(--bg-header-top);
+      span {
+        width: 0%;
       }
     }
   }

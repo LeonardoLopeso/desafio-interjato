@@ -3,9 +3,11 @@ import { FiMenu, FiShoppingCart } from 'react-icons/fi';
 import { BreadCrumbs } from '../BreadCrumbs';
 import { IPropHeader } from '../../types';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/main';
 
 export const Header = ({ numpage }: IPropHeader) => {
   const navigate = useNavigate();
+  const { cart } = useCart();
 
   return(
     <C.Container>
@@ -19,13 +21,17 @@ export const Header = ({ numpage }: IPropHeader) => {
 
       <div className="header">
         <div className="logo">
-          <h1 onClick={() => navigate('/')} >Logo</h1>
+          <h1 onClick={() => navigate('/')} >InterAgro</h1>
         </div>
         <div className="cart">
-          <div onClick={() => navigate('/carrinho')}><FiShoppingCart size={20} /> Carrinho</div>
+          <div onClick={() => navigate('/carrinho')}>
+            <span className="qtd-itens-cart">{cart.length}</span>
+            <FiShoppingCart size={32} /> 
+            Carrinho
+          </div>
         </div>
 
-        <div className="menu-mobile"><FiMenu size={20} /></div>
+        <div className="menu-mobile"><FiMenu size={28} /></div>
       </div>
       
       <div className="breadcrumb">
