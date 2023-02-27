@@ -6,6 +6,7 @@ import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { useCart } from '../../context/main';
 import { Products } from '../../dataMock';
+import { GoToTop } from '../../GoToTop';
 import { IItem, IProduct } from '../../types';
 import * as C from './styles';
 
@@ -116,7 +117,8 @@ export const ProductDetail = () => {
         </div>
 
       </C.ContentWrapper>
-
+      
+      <GoToTop />
     </C.Container>
   );
 }
