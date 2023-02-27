@@ -27,8 +27,14 @@ Após a escolha e execução de uma das maneiras o projeto estará disponível n
 
 Para a construção do projeto foi utilizado as seguintes tecnologias:
 
-* [React.js](https://pt-br.reactjs.org/)
 * [Figma](https://www.figma.com/)
+* [React.js](https://pt-br.reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Styled-Components](https://styled-components.com/)
+* [React-Router-Dom](https://reactrouter.com/en/main)
+* [React-icons](https://react-icons.github.io/react-icons/)
+* [Framer-motion](https://www.framer.com/motion/)
+* [Toasfy](https://fkhadra.github.io/react-toastify/introduction)
 
 ## ✅ Items Concluídos
 
